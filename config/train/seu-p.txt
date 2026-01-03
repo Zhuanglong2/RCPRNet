@@ -1,0 +1,27 @@
+[DEFAULT]
+dataset_folder = /media/myssd/Datasets/RCPR-Dataset
+dataset = SEU4DPR
+
+[TRAIN]
+num_workers = 2
+# 2048, 1536
+batch_size = 768
+# 128, 96
+batch_split_size = 16
+val_batch_size = 96
+
+image_resize_height = 360
+image_resize_width = 640
+
+lr = 1e-3
+epochs = 200
+scheduler_milestones = 70, 150
+aug_mode = 1
+weight_decay = 1e-4
+loss = TruncatedSmoothAP
+tau1 = 0.01
+positives_per_query = 4
+
+train_file = train_queries_rc_seu-p.pickle
+val_query = seu-af_val_evaluation_query_rc_25.pickle
+val_database = seu-af_val_evaluation_database_rc_25.pickle

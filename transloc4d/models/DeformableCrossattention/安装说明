@@ -1,0 +1,3 @@
+安装MultiScaleDeformableAttention库
+cd ./models/ops
+sh ./make.sh
